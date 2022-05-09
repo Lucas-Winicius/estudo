@@ -1,0 +1,16 @@
+body {
+    background-color: rgb(53, 53, 53);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+    color: azure;
+}
+
+h2 {
+    color: aqua;
+}
+
+p {
+    text-align: justify;
+}

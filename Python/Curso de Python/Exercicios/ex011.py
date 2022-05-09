@@ -1,0 +1,6 @@
+l1 = float(input('DIGITE A LARGURA DA PAREDE: '))
+a1 = float(input('DIGITE A ALTURA DA PAREDE: '))
+
+v1 = l1*a1
+print(f'A DIMENSAO DE SUA PAREDE E DE {l1}X{a1} E SUA AREA E DE {v1:.2f}M²')
+print(f'PARA PINTAR ESSA PAREDE VOCE IRA PRECISAR DE {v1/2:.2f}l DE TINTA.')

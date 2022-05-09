@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grouping tags</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: dimgray;
+            margin: 0px;
+        }
+
+        header {
+            background-color: white;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        nav {
+            background-color: rgb(102, 102, 102);
+            padding: 3px;
+            box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.315);
+
+        }
+
+        nav > a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            margin-right: 35px;
+        }
+
+        nav > a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            background-color: white;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 20px;
+        }
+
+        article {
+            background-color: lightgray;
+            padding: 5px;
+        }
+
+        article > aside {
+            background-color: rgb(148, 147, 147);
+            text-align: center;
+            width: 170px;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 3px;
+            margin: 0px;
+        }
+
+        footer > p {
+            margin: 0px;
+        }
+
+        main > section > article > aside {
+            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.226);
+            border-radius: 5px;
+        }
+
+        div#bola {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.226);
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Meu site</h2>
+        <nav>
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+            <a href="#">Link 4</a>
+            <a href="#">Link 5</a>
+        </nav>
+    </header> <!-- Cabeçalho -->
+
+
+    <main>
+        <section id="assuntos">
+
+        </section>
+        <section id="noticias">
+            <article>
+                <h2>Noticias sobre o Brasil</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci ipsam voluptates totam sunt voluptatibus molestiae illo facere tempore aperiam ducimus, reprehenderit labore dicta optio amet et id laborum minima accusantium illum magni odit doloribus eum. Necessitatibus repellendus asperiores vel corporis commodi illum adipisci nihil voluptate obcaecati voluptatum laboriosam laudantium deleniti animi nulla possimus tempora, at eum eligendi doloribus incidunt ut facere, delectus repellat. Voluptatibus aperiam totam odit tenetur! Minus vel earum dolorum delectus nesciunt natus ducimus autem sequi quam officiis, nihil magnam iure culpa officia quasi soluta rerum aut, ipsam commodi itaque pariatur accusamus quisquam. Ut laboriosam saepe magni eligendi sapiente harum voluptatibus, rerum similique itaque distinctio minima deserunt cumque quaerat id error animi modi tenetur sunt laborum beatae possimus aspernatur inventore. Maxime odio expedita officiis corporis architecto necessitatibus quod? Magnam enim, accusamus, officia nulla hic illum distinctio quo reprehenderit voluptas nam, quos fugit explicabo assumenda! Eligendi ratione omnis culpa alias voluptatum debitis, sed dolorem officiis quo ad nihil placeat quaerat pariatur? Tempore pariatur delectus incidunt earum reprehenderit quia sed repellat facere ipsum, tempora aliquid beatae eligendi aperiam nemo veniam magnam cupiditate fugit ex quaerat harum suscipit ducimus sapiente? Architecto rerum ipsum accusamus incidunt blanditiis optio eos exercitationem sit quaerat?</p>
+                <aside>
+                    <p>Escrito por abrobrinha</p>
+                </aside>
+            </article>
+            <article>
+
+            </article>
+        </section>
+    </main> <!-- Conteudo Principal -->
+
+
+    <footer>
+        <p>Desenvolvido por Aboborazina</p>
+    </footer> <!-- RODA-PE -->
+    <div id="bola"></div>
+</body>
+</html>

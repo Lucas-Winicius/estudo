@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM!!!</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(to top, rgb(82, 81, 81), white);
+            height: 95vh;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+    <p>Lag!!!!!!!</p>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usa o <strong>DOM</strong> em JavaScript.</p>
+    <div id="msg" name="msg">Clique em mim!</div>
+    <script>
+        var p1 = window.document.getElementsByTagName('p')[2]
+        window.document.write(p1.innerText  + ' Copia')
+        // window.alert(p1.innerText)
+
+        var d = window.document.getElementById('msg')
+        d.innerText = 'Hmm Disse o villager'
+
+        var d = window.document.getElementsByName('msg')[0]
+        d.innerText = 'Ola!'
+
+        // Seletores
+        var d = window.document.querySelector('div#msg')
+        d.style.color = 'Blue'
+    </script>
+</body>
+</html>

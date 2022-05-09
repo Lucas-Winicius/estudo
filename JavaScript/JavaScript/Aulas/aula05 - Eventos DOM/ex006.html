@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM!!!</title>
+    <style>
+        div#area {
+            font: normal 30pt arial;
+            background-color: green;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 400px;
+            height: 400px;
+            line-height: 400px;
+            text-align: center;
+            border-radius: 10px;
+            border: 1px solid black;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.486);
+        }
+    </style>
+</head>
+<body>
+    <div id="area" onclick="clicar()" onmouseenter="entrou()" onmouseout="saiu()">
+        interaja...
+    </div>
+
+    <script>
+
+        addEventListener('click', clicar)
+        addEventListener('mouseenter', entrou)
+        addEventListener('mouseout', saiu)
+
+
+        function clicar() {
+            var d = document.getElementById('area')
+            d.style.background = 'darkgray'
+            d.style.color = 'white'
+            d.innerText = 'Clicou'
+            d.style.textDecoration = 'underline'
+        }
+
+        function entrou() {
+            var d = document.getElementById('area')
+            d.innerText = 'Entrou'
+            d.style.background = '#00ffff'
+            d.style.color = 'black'
+            d.style.textDecoration = 'underline'            
+        }
+
+        function saiu() {
+            var d = document.getElementById('area')
+            d.innerText = 'Fora'
+            d.style.background = 'green'
+        }
+    </script>
+</body>
+</html>

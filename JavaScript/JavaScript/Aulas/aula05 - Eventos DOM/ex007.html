@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: lightgray;
+        }
+
+        #bot {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando valores</h1>
+    <input type="number" name="n1" id="n1"> + 
+    <input type="number" name="n2" id="n2"> <br>
+    <input type="button" value="Somar" onclick="somar()" id="bot">
+    <div id="r">Resultado</div>
+
+    <script>
+        function somar(n1, n2) {
+            var v1 = document.getElementById('n1')
+            var v2 = document.getElementById('n2')
+
+            var n1 = Number(v1.value)
+            var n2 = Number.parseInt(v2.value)
+
+            var s = n1 + n2
+
+            var rsp = document.getElementById('r')
+
+            rsp.innerText = `O resultado da soma e de: ${s}`
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+comandos:
+
+Funções Ativas:
+!Bot em funcionamento
+!novo Membro #apresenta erro
+
+Comandos:
+>oie #indisponivel
+>ola
+>dado 99 
+>game #em desenvolvimento
+    >jogada #funcionalidade extra do >game
+>adivinhe #jogo de adivinhaçao incompleto
+>comandos #criar um embed 
+>finalizar #reinicia o Bot
+>ping
+>ajuda
+>e

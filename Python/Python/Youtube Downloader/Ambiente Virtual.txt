@@ -1,0 +1,6 @@
+python -m venv nome(venv)
+
+.\venv\Scripts\Activate.ps1
+
+Antes desbloqueie o powershell
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned

@@ -1,0 +1,12 @@
+{
+    "nome": "Lucas",
+    "apelido": "Abobora",
+    "idade": 15,
+    "endereco": {
+        "pais": "Brasil",
+        "estado": "São Paulo",
+        "cidade": "Luiziânia",
+        "rua": "ABC",
+        "numero": 1234
+    } 
+}

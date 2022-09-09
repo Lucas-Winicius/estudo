@@ -1,0 +1,89 @@
+<!-- Criar Banco de dados -->
+use NomeDoBanco
+
+<!-- Ver bancos criados -->
+show dbs
+
+<!-- Adicionar Um -->
+db.pessoas.insertOne({ nome: "Lucas", idade: 15, profissao: "Programador", esta_empregado: false })
+
+<!-- Adicionar varios -->
+db.pessoas.insertMany([
+    { nome: "Lucas", idade: 15, profissao: "Programador", esta_empregado: false },
+    { nome: "Leonardo", idade: 14, profissao: "Programador", esta_empregado: false },
+    { nome: "Pedro", idade: 16, profissao: "Programador", esta_empregado: false },
+    { nome: "Joao", idade: 28, profissao: "Programador", esta_empregado: true }
+])
+
+<!-- Conteudo do banco de dados -->
+db.pessoas.find()
+db.pessoas.find().pretty()
+
+<!-- Exibir informacoes -->
+db.pessoas.find({ esta_empregado: true })
+
+<!-- Mostrar dados especificos -->
+db.pessoas.find({ esta_empregado: true })
+
+<!-- Contar os dados -->
+db.pessoas.find().count
+
+<!-- Buscar apenas um dado -->
+db.pessoas.findOne()
+
+<!-- Buscar apenas um dado especifico -->
+db.pessoas.findOne({ nome: "Lucas" })
+
+<!-- Atualizar dado -->
+db.pessoas.updateOne({ nome: "Joao" }, { $set: { profissao: "Arquiteto" } })
+
+<!-- Atualizar Varios -->
+db.pessoas.updateMany( {}, { $set: { salario: 5000 } )
+db.pessoas.updateMany({ idade: { $gt: 18 }, { $set: { deMenor: true } })
+
+<!-- Dados unicos -->
+db.pessoas.updateOne({ nome: "Lucas" }, { $set: { procurando_emprego: true } })
+
+<!-- Deletar um dado -->
+db.pessoas.deleteOne({name: "Abobora"})
+
+<!-- Deletar varios dados -->
+db.pessoas.deleteMany({esta_empregado: false})
+
+<!-- OPERADORES -->
+
+<!-- Maior que -->
+db.pessoas.find({ idade: { $gt: 20 } })
+
+<!-- Maior ou igual a -->
+db.pessoas.find({ idade: { $gte: 20 } })
+
+<!-- Menor que -->
+db.pessoas.find({ idade: { $lt: 20 } })
+
+<!-- Menor igual -->
+db.pessoas.find({ idade: { $lte: 20 } })
+
+<!-- Incremento -->
+db.pessoas.updateOne({nome: "Lucas"}, { $inc: { salario: 1000 })
+
+<!-- Decremento -->
+db.pessoas.updateOne({nome: "Lucas"}, { $inc: { salario: -1000 })
+
+<!-- Index -->
+db.pessoas.createIndex({nome: 1})
+
+<!-- Pegar index -->
+db.pessoas.getIndexes()
+
+<!-- Deletar Index -->
+db.pessoas.dorpIndex("nome_1")
+
+<!-- Ver colecoes -->
+show collections
+
+<!-- Deletar colections -->
+db.pessoas.drop()
+
+<!-- Deletar Banco de dados -->
+db.droptDtabase()

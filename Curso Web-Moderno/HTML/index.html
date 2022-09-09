@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <header><h1 class="style">Exercicios HTML</h1></header>
+    <hr>
+    <nav>
+        <a href nav-content="exercicios/teste.html">00 - Teste</a> | 
+        <a href nav-content="exercicios/aula01.html">01 - Textos</a> | 
+        <a href nav-content="exercicios/aula02.html">02 - Textos</a> | 
+        <a href nav-content="exercicios/listas.html">03 - Listas</a> | 
+        <a href nav-content="exercicios/listasAninhadas.html">04 - Listas Aninhadas</a> | 
+        <a href nav-content="exercicios/links.html">05 - Links</a> | 
+        <a href nav-content="exercicios/tabelas.html">06 - Tabelas</a> | 
+        <a href nav-content="exercicios/form/form.html">07 - Formulario</a> | 
+        <a href nav-content="exercicios/imagens.html">08 - Imagens</a> | 
+        <a href nav-content="exercicios/videos.html">09 - Video</a> | 
+        <a href nav-content="exercicios/tagsNaoVisuais.html">10 - Tags ñ visuais</a> | 
+    </nav>
+    
+    <section id="conteudo"></section>
+    <footer class="style">Curso de Web-Moderno</footer>
+    <script>
+        document.querySelectorAll('[nav-content]').forEach(link => {
+            link.onclick = function(e) {
+                e.preventDefault()
+                
+                const conteudo = document.querySelector('#conteudo')
+                fetch(link.getAttribute('nav-content'))
+                    .then(resp => resp.text())
+                    .then(html => conteudo.innerHTML = html)
+                    .then(() => {
+                        document.querySelector('footer').innerHTML = '<hr>Curso de Web-Moderno'
+                    })
+            }
+        })
+    </script>
+</body>
+</html>

@@ -11,14 +11,17 @@ body {
     padding: 10px;
     font-family: 'Oswald', sans-serif;
     font-size: 1.1em;
+    position: absolute;
+    width: 98.5vw;
 }
 
 ul, li, nav.menu, aside.autenticacao {
-    display: inline-block;
+    display: inline;
+    width: max-content;
 }
 
 img {
-    width: 20vw;
+    width: 20%;
 }
 
 a {
@@ -31,7 +34,7 @@ aside.autenticacao {
     padding-top: 1%;
 }
 
-ul {
+ul, img {
     float: left;
 }
 
@@ -43,11 +46,13 @@ ul {
 }
 
 li {
-    padding: 20px;
+    padding: 12px 20px;
+    transition: 500ms;
+    border-radius: 10px;
+    margin-left: 2px;
 }
 
 li:hover {
     color: black;
     background-color: #68AADB;
-
 }

@@ -1,4 +1,5 @@
 const bodyParser = require("body-parser")
+const { response } = require("express")
 const express = require("express")
 const app = express()
 
@@ -27,6 +28,24 @@ app.post('/upload', (req, res) => {
         }
 
         res.end("Concluido com sucesso.")
+    })
+})
+
+app.post('/formulario', (req, res) => {
+    res.send({
+        ...req.body,
+        id: 1
+    })
+})
+
+app.get('/parOuImpar', (req, res) => {
+    // req.body ===> no corpo
+    // req.query  => */parOuImpar?numero=13
+    // req.params => */parOuImpar/13
+    const par = parseInt(req.query.numero) % 2 === 0
+
+    res.send({
+        resultado: par ? 'Par' : 'Impar'
     })
 })
 

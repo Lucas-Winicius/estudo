@@ -1,6 +1,6 @@
-const { series } = require('gulp')
+const { series, parallel } = require('gulp')
 const gulp = require('gulp')
-const sass = require('node-sass')(require('sass'));
+const sass = require('gulp-sass')(require('sass'))
 const uglifyCSS = require('gulp-uglifycss')
 const concat = require('gulp-concat')
 
@@ -9,9 +9,17 @@ function transformacaoSASS() {
         .pipe(sass().on('error', sass.logError))
         .pipe(uglifyCSS({
             "uglyComments": true
-        }))
+        })) /* ESPAÇOS */
         .pipe(concat('estilo.min.css'))
         .pipe(gulp.dest('build/css'))
 }
 
-exports.default = series(transformacaoSASS)
+function tranferirHTML() {
+    return gulp.src('./src/index.html')
+    .pipe(uglifyCSS({
+        "uglyComments": true
+    }))
+    .pipe(gulp.dest('./build'))
+}
+
+exports.default = parallel(transformacaoSASS, tranferirHTML)

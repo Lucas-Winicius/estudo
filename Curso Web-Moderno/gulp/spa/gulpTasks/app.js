@@ -2,7 +2,7 @@ const gulp = require('gulp')
 const babel = require('gulp-babel')
 const uglify = require('gulp-uglify')
 const uglifyCSS = require('gulp-uglifycss')
-const sass = require('gulp-sass')
+const sass = require('gulp-sass')(require('sass'))
 const concat = require('gulp-concat')
 const htmlmin = require('gulp-htmlmin')
 
@@ -32,6 +32,10 @@ function appIMG() {
     return gulp.src('./src/assets/imgs/**/*.*')
         .pipe(gulp.dest('./build/assets/imgs'))
 }
+
+gulp.task('appHTML', appHTML)
+gulp.task('appCSS', appCSS)
+gulp.task('appJS', appJS)
 
 module.exports = {
     appHTML,

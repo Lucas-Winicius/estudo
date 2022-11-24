@@ -81,6 +81,17 @@
         <p>Cod3r Ensino</p>
     </footer>
     <script>
-        // ...
+        const comBorda = { 'border': 'solid 8px orange' }
+        const semBorda = { 'border': 'none' }
+
+        $('a[href="#link3"]')
+            .parent()
+            .css(comBorda)
+            .css(semBorda)
+
+        $('li:last')
+            .prev()
+            .css(comBorda)
+            .css(comBorda0))
     </script>
 </body>

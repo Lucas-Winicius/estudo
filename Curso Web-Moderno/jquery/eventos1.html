@@ -20,6 +20,35 @@
     <input type="text" placeholder="Cor de Background">
 
     <script>
-        // ...
+        function mostrarPosicaoMouse(e) {
+            $('#posicao').html(`x: ${e.clientX} y: ${e.clientY}`)
+        }
+
+        $('body').on('mousemove', mostrarPosicaoMouse)
+
+        $('#posicao').mouseover(e => {
+            $('body').off('mousemove', mostrarPosicaoMouse)
+        })
+
+        $('#posicao').mouseleave(e => {
+            $('body').on('mousemove', mostrarPosicaoMouse)
+        })
+
+        let cliques = 0
+        $('body').on('click', function() {
+            $('#cliques').html(`Cliques: ${++cliques}`)
+        })
+
+
+        
+
+        // MEU
+        function trocarCorFundo(e, cor) {
+            
+        }
+
+        $('input[type=text]').on('input', function(e) {
+            $('body').css('background-color', $(this).val())
+        })
     </script>
 </body>

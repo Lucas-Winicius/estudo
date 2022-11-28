@@ -28,6 +28,35 @@
     <div>Animar!</div>
 
     <script>
-        // ...
+
+        $(document).ready(async function () {
+            
+            function alterarLargura(valor, duracao, cb) {
+                $('div').animate({ width: `+=${valor}` }, duracao, cb)
+                console.log('Alterando Largura...')
+            }
+
+            function moverDiagonal(valor, duracao, cb) {
+                $('div').animate({ top: `+=${valor}`, left: `+=${valor}` }, duracao, cb)
+                console.log('Movendo...')
+            }
+
+            function girar(valor, duracao, cb) {
+                $('div').animate({ transform: `+=${valor}` }, {
+                    step: function (valor) {
+                        $(this).css('transform', `rotate(${valor}deg)`)
+                    },
+                    duration: duracao
+                }, 'linear', cb)
+                console.log('Girando...')
+            }
+
+            await alterarLargura(300, 100)
+            await alterarLargura(-300, 'slow')
+            await moverDiagonal(300, 600)
+            await girar(3300, 3000)
+        
+        })
+
     </script>
 </body>

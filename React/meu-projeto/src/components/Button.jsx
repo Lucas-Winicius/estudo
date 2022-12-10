@@ -1,0 +1,1 @@
+export default props => <button onClick={props.event} >{props.text}</button>

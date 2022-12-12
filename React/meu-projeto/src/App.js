@@ -1,17 +1,18 @@
-import './App.css';
-import OutraLista from './components/OutraLista';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+
 
 function App() {
-
-  const meusItens = [ 'React', 'Vue', 'Angular' ]
+  const [ nome, setNome ] = useState()
 
   return (
-    <div className="App">
-      <h1>Renderização Listas</h1>
-      <OutraLista itens={meusItens}/>
-      <OutraLista />
-    </div>
-  );
+    <Router>
+      <ul>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/empresa">Empresa</Link></li>
+        <li><Link to="/contato">Contato</Link></li>
+      </ul>
+    </Router>
+  )
 }
 
 export default App;

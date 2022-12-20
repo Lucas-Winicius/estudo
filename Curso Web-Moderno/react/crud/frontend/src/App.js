@@ -1,21 +1,23 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'font-awesome/css/font-awesome.min.css';
 import './css/App.css'
 import Logo from './components/Logo'
 import Nav from './components/Nav'
-import Main from './components/Main'
 import Footer from './components/Footer'
+import { BrowserRouter } from 'react-router-dom'
+import Routes from './components/Routes';
 
-function App() {
-  return ( 
-    <div>
-      
+
+
+const App = props =>
+  <BrowserRouter>
+    <div className='app'>
+      <Logo />
+      <Nav />
+      <Routes />
+      <Footer />
     </div>
-   );
-}
+  </BrowserRouter>
 
-export default props => 
-<div className='app'>
-  <Logo/>
-  <Nav/>
-  <Main/>
-  <Footer/>
-</div>
+
+export default App

@@ -1,11 +1,13 @@
 import '../css/Main.css'
 import Header from './Header'
 
-const Main = (props) => 
+const Main = props => 
 <>
-    <Header/>
-    <main className='conteudo'>
-        Conteúdo
+    <Header {...props} />
+    <main className='content container-fluid'>
+        <div className="p-3 mt-3">
+            {props.children}
+        </div>
     </main>
 </>
 

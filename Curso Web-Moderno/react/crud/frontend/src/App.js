@@ -9,14 +9,14 @@ import Routes from './components/Routes';
 
 
 
-const App = props =>
+const App = props => 
   <BrowserRouter>
-    <div className='app'>
-      <Logo />
-      <Nav />
-      <Routes />
-      <Footer />
-    </div>
+  <div className='app'>
+    <Logo/>
+    <Nav/>
+    <Routes/>
+    <Footer/>
+  </div>
   </BrowserRouter>
 
 

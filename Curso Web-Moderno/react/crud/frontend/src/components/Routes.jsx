@@ -1,12 +1,12 @@
-import { Redirect, Route, Router } from 'react-router'
+import { Redirect, Route, Router } from 'react-router';
 import UserCrud from './UserCrud'
 import Home from './Home'
 
 const Routes = props => 
     <Router>
-        <Route exact path="/" element={<Home/>}/>
-        <Route path="/users" element={<UserCrud/>}/>
-        <Redirect from='*' element={<Home/>} />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/users" component={UserCrud} />
+            <Redirect from='*' to="/" />
     </Router>
 
 export default Routes

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./scripts/app.js" defer></script>
+    <title>VueJS</title>
+</head>
+<body>
+    <div id="app">
+        <form id="appform">
+            <input type="text" v-model="inputName" placeholder="Digite o seu nome">
+            <input type="submit" value="Enviar" @click="submitForm">
+        </form>
+        <p>O meu nome é: {{ name }}, e tenho {{ age }} anos</p>
+        <p>O meu nome é: {{ inputName }}</p>
+    </div>
+</body>
+</html>

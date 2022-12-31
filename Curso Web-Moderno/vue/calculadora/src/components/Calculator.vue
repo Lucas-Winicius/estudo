@@ -1,17 +1,33 @@
 <template>
-  <div class="calculatorr">
-    <Display/>
-    <Button/>
+  <div class="calculator">
+    <display-vue value="1100"/>
+    <button-vue label="AC" triple/>
+    <button-vue label="/" operation/>
+    <button-vue label="7"/>
+    <button-vue label="8"/>
+    <button-vue label="9"/>
+    <button-vue label="*" operation/>
+    <button-vue label="4"/>
+    <button-vue label="5"/>
+    <button-vue label="6"/>
+    <button-vue label="-" operation/>
+    <button-vue label="1"/>
+    <button-vue label="2"/>
+    <button-vue label="3"/>
+    <button-vue label="+" operation/>
+    <button-vue label="0" double/>
+    <button-vue label="."/>
+    <button-vue label="=" operation/>
   </div>
 </template>
 
 <script>
-import Display from './Display.vue';
-import Button from './Button.vue';
+import DisplayVue from './Display.vue';
+import ButtonVue from './Button.vue';
 
 export default {
-    name: 'Calculator',
-    components:  { Display, Button }
+    name: 'CalculatorContainer',
+    components:  { DisplayVue, ButtonVue }
 }
 </script>
 

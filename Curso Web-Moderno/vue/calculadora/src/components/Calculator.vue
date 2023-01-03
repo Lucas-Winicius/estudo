@@ -1,45 +1,104 @@
 <template>
   <div class="calculator">
-    <display-vue value="1100"/>
-    <button-vue label="AC" triple/>
-    <button-vue label="/" operation/>
-    <button-vue label="7"/>
-    <button-vue label="8"/>
-    <button-vue label="9"/>
-    <button-vue label="*" operation/>
-    <button-vue label="4"/>
-    <button-vue label="5"/>
-    <button-vue label="6"/>
-    <button-vue label="-" operation/>
-    <button-vue label="1"/>
-    <button-vue label="2"/>
-    <button-vue label="3"/>
-    <button-vue label="+" operation/>
-    <button-vue label="0" double/>
-    <button-vue label="."/>
-    <button-vue label="=" operation/>
+    <display-vue :value="displayValue" />
+    <button-vue label="AC" triple @onClick="clearMemory" />
+    <button-vue label="/" operation @onClick="setOperation" />
+    <button-vue label="7" @onClick="addDigit" />
+    <button-vue label="8" @onClick="addDigit" />
+    <button-vue label="9" @onClick="addDigit" />
+    <button-vue label="*" operation @onClick="setOperation" />
+    <button-vue label="4" @onClick="addDigit" />
+    <button-vue label="5" @onClick="addDigit" />
+    <button-vue label="6" @onClick="addDigit" />
+    <button-vue label="-" operation @onClick="setOperation" />
+    <button-vue label="1" @onClick="addDigit" />
+    <button-vue label="2" @onClick="addDigit" />
+    <button-vue label="3" @onClick="addDigit" />
+    <button-vue label="+" operation @onClick="setOperation" />
+    <button-vue label="0" double @onClick="addDigit" />
+    <button-vue label="." @onClick="addDigit" />
+    <button-vue label="=" operation @onClick="setOperation" />
   </div>
 </template>
 
 <script>
-import DisplayVue from './Display.vue';
-import ButtonVue from './Button.vue';
+import DisplayVue from "./Display.vue";
+import ButtonVue from "./Button.vue";
 
 export default {
-    name: 'CalculatorContainer',
-    components:  { DisplayVue, ButtonVue }
-}
+  name: "CalculatorContainer",
+  data() {
+    return {
+      displayValue: "0",
+      clearDisplay: false,
+      operation: null,
+      values: [0, 0],
+      current: 0,
+    };
+  },
+  components: { DisplayVue, ButtonVue },
+  methods: {
+    clearMemory() {
+      Object.assign(this.$data, this.$options.data());
+    },
+    setOperation(operation) {
+      if (this.current === 0) {
+        this.operation = operation;
+        this.current = 1;
+        this.clearDisplay = true;
+      } else {
+        const equals = operation === "=";
+        const currentOperation = this.operation;
+
+        try {
+          this.values[0] = eval(
+            `${this.values[0]} ${currentOperation} ${this.values[1]}`
+          );
+          if (isNaN(this.values[0]) || !isFinite(this.values[0])) {
+            this.clearMemory();
+            return;
+          }
+        } catch (e) {
+          this.$emit("onError", e);
+          console.error(e);
+        }
+
+        this.values[1] = 0;
+        this.displayValue = this.values[0];
+        this.operation = equals ? null : operation;
+        this.current = equals ? 0 : 1;
+        this.clearDisplay = !equals;
+      }
+    },
+    addDigit(n) {
+      if (n === "." && this.displayValue.includes(".")) return;
+
+      const clearDisplay = this.displayValue === "0" || this.clearDisplay;
+      const currentValue = clearDisplay ? "" : this.displayValue;
+      const displayValue = currentValue + n;
+
+      this.displayValue = displayValue;
+      this.clearDisplay = false;
+
+      if (n !== ".") {
+        const i = this.current;
+        const newValue = parseFloat(displayValue);
+        this.values[i] = newValue;
+      }
+    },
+  },
+};
 </script>
 
 <style>
 .calculator {
-    height: 320px;
-    width: 235px;
-    border-radius: 5px;
-    overflow: hidden;
+  height: 320px;
+  width: 235px;
+  border-radius: 5px;
+  overflow: hidden;
 
-    display: grid;
-    grid-template-columns: repeat(4, 20%);
-    grid-template-rows: 1fr repeat(5, 48px);
+  display: grid;
+  grid-template-columns: repeat(4, 20%);
+  grid-template-rows: 1fr repeat(5, 48px);
 }
 </style>

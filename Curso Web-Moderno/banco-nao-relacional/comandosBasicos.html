@@ -1,0 +1,47 @@
+<!-- AJUDA -->
+db.
+db.help()
+
+<!-- EXIBIR BANCOS ABERTOS -->
+show dbs
+
+<!-- EXIBIR COLEÇÕES -->
+show collections
+
+<!-- CRIAR OU USAR UM BANCO -->
+use [nomeDoBanco]
+
+<!-- CRIAR UMA COLEÇÃO -->
+db.createCollection('[nomeDaColeção]')
+
+<!-- DELETAR UMA COLEÇÃO -->
+db.[nomeDaCleção].drop()
+
+<!-- INSERIR DADOS NA COLEÇÃO -->
+db.[nomeDaColeção].insert({conteudo: 'Objeto comum'})
+
+<!-- INSERIR UM _ID -->
+ObjectId()
+
+<!-- EXIBINDO DADOS SALVOS -->
+db.[nomeDaColeção].find()
+
+<!-- EXIBINDO DE UMA FORMA MAIS ORGANIZADA -->
+db.[nomeDaColeção].find().pretty()
+
+<!-- BUSCAR APENAS UM OU O PRIMEIRO -->
+db.[nomeDaColeção].findOne() = output => o primeiro encontrado
+db.[nomeDaColeção].findOne({ sigla: 'SP' }) = output => o primeiro encontrado que contenha o parametro desejado
+
+<!-- CONTAR AS COLEÇÕES -->
+db.[nomeDaColeção].count()
+
+<!-- AGREGATE -->
+db.[nomeDaColeção].agregate([
+    { ... }
+])
+
+db.estados.agregate([{ $project: {nome: 1, "cidades.nome": 1, _id: 0 }}])
+
+<!-- UPDATE -->
+db.estados.update({sigla: 'SP'}, {$set: {populacao: 45340000}})

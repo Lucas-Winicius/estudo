@@ -64,3 +64,13 @@ button {
     transition: 1s;
     color: white;
 }
+
+#exibirIMC {
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(255, 81, 0);
+    color: white;
+    font-weight: bolder;
+    transition: 1s;
+}

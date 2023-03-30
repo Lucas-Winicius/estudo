@@ -13,12 +13,36 @@
 
   <section class="container">
     <h1>Gerador de senhas</h1>
-    <div class="resultado">Selecione as opções</div>
+
+    <!-- --> <div class="resultado">Selecione as opções</div>
+
     <div class="opcoes">
-      <p clas>
-        <span class="text">Quantidade de caracters:</span>
-        <input type="number" name="quantidade" id="quantidade">
-      </p>
+
+      <div>
+        <label for="quantidade">Quantidade de caracters:</label>
+        <input type="number" name="quantidade" id="quantidade" min="10">
+      </div>
+
+      <div>
+        <input type="checkbox" name="l_min" id="l_min">
+        <label for="letras_min">Letras minusculas ( a - z )</label>
+      </div>
+
+      <div>
+        <input type="checkbox" name="l_mai" id="l_mai">
+        <label for="letras_min">Letras MAUSCULAS ( A - Z )</label>
+      </div>
+
+      <div>
+        <input type="checkbox" name="nums" id="nums">
+        <label for="letras_min">Numeros ( 0 - 9 )</label>
+      </div>
+
+      <div>
+        <input type="checkbox" name="simb" id="simb">
+        <label for="letras_min">simbolos ( ! - ? )</label>
+      </div>
+
     </div>
   </section>
 

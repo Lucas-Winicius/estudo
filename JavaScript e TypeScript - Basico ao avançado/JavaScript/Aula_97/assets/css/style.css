@@ -56,3 +56,13 @@ form button {
 form button:hover {
   background: var(--primary-color-darker);
 }
+
+.resultado {
+  overflow-x: scroll;
+  background-color: lightgray;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: all;
+  border: 2px solid rgb(0, 98, 255);
+}

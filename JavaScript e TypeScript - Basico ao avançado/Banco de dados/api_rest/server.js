@@ -1,3 +1,3 @@
-import falaOi from './app';
+import app from './app';
 
-falaOi();
+app.listen(3000, () => console.log('Server listening on port 3000'))

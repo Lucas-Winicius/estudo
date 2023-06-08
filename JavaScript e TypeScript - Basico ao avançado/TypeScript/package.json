@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx tsc",
-    "webpack": "webpack -w"
+    "build:backend": "npx tsc",
+    "build:frontend": "webpack -w"
   },
   "keywords": [],
   "author": "",
